@@ -12,14 +12,21 @@ function asyncHandler(cb) {
     }
 }
 
-router.get('/test', (req, res) => {
-    res.send(`This app is currently being built, this is a test page.`)
-})
-
 router.get('/', (req, res) => {
     Psap.find()
         .then(psaps => res.json(psaps))
         .catch(err => res.status(404).json( { nopsapsfound: 'No PSAPs found' }))
+});
+
+router.get('/:id', (req, res) => {
+    Psap.findById(req.params.id)
+        .then(psap => res.json(psap))
+        .catch(err => res.status(404).json( { nopsapsfound: 'No PSAPs found' }))
+});
+
+router.post('/', (req, res) => {
+    Psap.create(req.body)
+        .then(psap => res.json({ msg: `The PSAP has been entered successfully!` }))
 })
 
 module.exports = router;
