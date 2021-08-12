@@ -20,7 +20,7 @@ const PsapCard = props => {
                     State: {psap.state}
                 </h3>
 
-                <h3 className="card-info__text">
+                <h3 className="card-info__number">
                     {psap.phone_number}
                 </h3>
 

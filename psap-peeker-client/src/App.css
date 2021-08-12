@@ -23,6 +23,10 @@
   width: 100%;
 }
 
+.psap-list-heading {
+  font-family: 'Cutive', serif;
+}
+
 .psaps-list {
   display: flex;
   flex-direction: row;
@@ -38,6 +42,13 @@
 
 .card-info__text {
   font-family: 'Cutive', serif;
-  font-weight: lighter;
   text-align: center;
+  font-size: 1.35em;
+}
+
+.card-info__number {
+  font-family: 'Atkinson Hyperlegible', sans-serif;
+  text-align: center;
+  font-size: 1.35em;
+  letter-spacing: 0.15em;
 }

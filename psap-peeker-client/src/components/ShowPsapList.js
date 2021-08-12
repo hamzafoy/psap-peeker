@@ -45,12 +45,12 @@ class ShowPsapList extends React.Component {
               <div className="row">
                 <div className="col-md-12">
                   <br />
-                  <h2 className="display-4 text-center">Psaps List</h2>
+                  <h2 className="display-4 text-center psap-list-heading">PSAPS List</h2>
                 </div>
     
                 <div className="col-md-12">
                   <Link to="/create-psap" className="btn btn-outline-warning float-right">
-                    + Add New Psap
+                    + Add New PSAP
                   </Link>
                   <br />
                   <br />
