@@ -40,15 +40,15 @@ class ShowPsapList extends React.Component {
         }
     
         return (
-          <div className="ShowPsapList">
-            <div className="container">
+          <div className="show-psap-list">
+            <div className="show-psap-list-container">
               <div className="row">
                 <div className="col-md-12">
                   <br />
                   <h2 className="display-4 text-center">Psaps List</h2>
                 </div>
     
-                <div className="col-md-11">
+                <div className="col-md-12">
                   <Link to="/create-psap" className="btn btn-outline-warning float-right">
                     + Add New Psap
                   </Link>
@@ -58,10 +58,11 @@ class ShowPsapList extends React.Component {
                 </div>
     
               </div>
-    
-              <div className="list">
-                    {psapList}
-              </div>
+                <div className="psaps-container">
+                    <div className="psaps-list">
+                        {psapList}
+                    </div>
+                </div>
             </div>
           </div>
         );

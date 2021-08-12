@@ -13,10 +13,21 @@
   color: white;
 }
 
-.list {
+.show-psap-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.show-psap-list-container {
+  width: 100%;
+}
+
+.psaps-list {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .card-container {
