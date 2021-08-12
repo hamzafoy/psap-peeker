@@ -63,7 +63,7 @@ class CreatePsap extends React.Component {
                 <div className='form-group'>
                   <input
                     type='text'
-                    placeholder='County of PSAP'
+                    placeholder='Enter the name of the county here. . .'
                     name='county'
                     className='form-control'
                     value={this.state.county}
@@ -74,7 +74,7 @@ class CreatePsap extends React.Component {
                 <div className='form-group'>
                   <input
                     type='text'
-                    placeholder='The state which the county belongs to. . .'
+                    placeholder='Enter the state which the county belongs to here. . .'
                     name='state'
                     className='form-control'
                     value={this.state.state}
@@ -85,7 +85,7 @@ class CreatePsap extends React.Component {
                 <div className='form-group'>
                   <input
                     type='number'
-                    placeholder='PSAP Number'
+                    placeholder='Enter the entire PSAP number without any spaces or symbols here. . .'
                     name='phone_number'
                     className='form-control'
                     value={this.state.phone_number}

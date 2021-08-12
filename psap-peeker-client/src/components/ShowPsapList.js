@@ -28,11 +28,10 @@ class ShowPsapList extends React.Component {
 
     render() {
         const psaps = this.state.psaps;
-        console.log("PrintBook: " + psaps);
         let psapList;
     
         if(!psaps) {
-          psapList = "there is no psap record!";
+          psapList = "There are no PSAP records!";
         } else {
           psapList = psaps.map((psap, k) =>
             <PsapCard psap={psap} key={k} />
