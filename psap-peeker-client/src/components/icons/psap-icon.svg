@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="325px" height="325px" viewBox="0 0 325 325" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+    <title>viiz-icon-Emergency-Services</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-HD" transform="translate(-778.000000, -25.000000)">
+            <g id="viiz-icon-Emergency-Services" transform="translate(778.000000, 25.000000)">
+                <circle id="Oval" fill="#FFFFFF" fill-rule="nonzero" cx="162.07" cy="162.31" r="162"></circle>
+                <path d="M51.84,139.73 L80.77,139.73" id="Shape" stroke="#150D3B" stroke-width="13" stroke-linecap="round"></path>
+                <path d="M71.43,99.35 L90.11,118.03" id="Shape" stroke="#150D3B" stroke-width="13" stroke-linecap="round"></path>
+                <path d="M71.43,180.12 L90.11,161.43" id="Shape" stroke="#150D3B" stroke-width="13" stroke-linecap="round"></path>
+                <path d="M272.3,139.73 L243.37,139.73" id="Shape" stroke="#150D3B" stroke-width="13" stroke-linecap="round"></path>
+                <path d="M252.71,99.35 L234.03,118.03" id="Shape" stroke="#150D3B" stroke-width="13" stroke-linecap="round"></path>
+                <path d="M252.71,180.12 L234.03,161.43" id="Shape" stroke="#150D3B" stroke-width="13" stroke-linecap="round"></path>
+                <circle id="Oval" fill="#8DC63F" fill-rule="nonzero" cx="162.07" cy="129.64" r="12.32"></circle>
+                <path d="M113.27,195.9 L113.27,87.83 C113.27,81.202583 118.642583,75.83 125.27,75.83 L198.87,75.83 C205.497417,75.83 210.87,81.202583 210.87,87.83 L210.87,196" id="Shape" stroke="#150D3B" stroke-width="13"></path>
+                <rect id="Rectangle-path" stroke="#150D3B" stroke-width="13" x="96.29" y="196.04" width="131.55" height="52.74" rx="12"></rect>
+                <path d="M162.07,159.05 L162.07,196.04" id="Shape" stroke="#150D3B" stroke-width="13" stroke-linecap="round"></path>
+            </g>
+        </g>
+    </g>
+</svg>

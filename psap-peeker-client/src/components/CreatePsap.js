@@ -27,7 +27,7 @@ class CreatePsap extends React.Component {
             phone_number: this.state.phone_number
         }
 
-        axios.post('http://localhost:8082/psaps', data)
+        axios.post('http://localhost:8082/', data)
         .then(res => {
             this.setState({
                 county: '',
@@ -49,13 +49,13 @@ class CreatePsap extends React.Component {
                         <div className="col-mid-8 m-auto">
                             <br />
                             <Link to="/" className="btn btn-outline-warning float-left">
-                                Show Book List
+                                Show PSAP List
                             </Link>
                         </div>
                         <div className="col-md-8 m-auto">
-              <h1 className="display-4 text-center">Add Book</h1>
+              <h1 className="display-4 text-center">Add PSAP</h1>
               <p className="lead text-center">
-                  Create new book
+                  Create new PSAP
               </p>
 
               <form noValidate onSubmit={this.onSubmit}>
@@ -70,7 +70,6 @@ class CreatePsap extends React.Component {
                     onChange={this.onChange}
                   />
                 </div>
-                <br />
 
                 <div className='form-group'>
                   <input
