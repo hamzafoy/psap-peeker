@@ -13,14 +13,9 @@
   color: white;
 }
 
-.show-psap-list {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
 .show-psap-list-container {
-  width: 100%;
+  width: 90%;
+  margin: 0 auto;
 }
 
 .psap-list-heading {
