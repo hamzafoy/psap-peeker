@@ -48,6 +48,9 @@ class ShowPsapList extends React.Component {
                 </div>
     
                 <div className="col-md-12">
+                  <Link to="/search-psap" className="btn btn-outline-warning float-left">
+                    &#x1F50E;&#xFE0E; Search for PSAP
+                  </Link>
                   <Link to="/create-psap" className="btn btn-outline-warning float-right">
                     + Add New PSAP
                   </Link>
