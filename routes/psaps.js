@@ -18,11 +18,11 @@ router.get('/', (req, res) => {
         .catch(err => res.status(404).json( { nopsapsfound: 'No PSAPs found' }))
 });
 
-router.get('/:id', (req, res) => {
-    Psap.findById(req.params.id)
+router.get('/search-psap'), (req, res) => {
+    Psap.find(req.body)
         .then(psap => res.json(psap))
-        .catch(err => res.status(404).json( { nopsapsfound: 'No PSAPs found' }))
-});
+        .catch(err => res.status(404).json( { nopsapfound: 'No such PSAP found' }))
+}
 
 router.post('/', (req, res) => {
     Psap.create(req.body)
