@@ -49,7 +49,7 @@ class CreatePsap extends React.Component {
                         <div className="col-mid-8 m-auto">
                             <br />
                             <Link to="/" className="btn btn-outline-warning float-left">
-                                Show PSAP List
+                                &#187; Show PSAP List
                             </Link>
                         </div>
                         <div className="col-md-8 m-auto">
