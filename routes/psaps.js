@@ -2,26 +2,20 @@ const express = require('express');
 const router = express.Router();
 const Psap = require('../models/PSAP')
 
-function asyncHandler(cb) {
-    return async(req, res, next) => {
-        try {
-            await cb(req, res, next)
-        } catch(error) {
-            next(error);
-        }
-    }
-}
-
 router.get('/', (req, res) => {
     Psap.find()
         .then(psaps => res.json(psaps))
         .catch(err => res.status(404).json( { nopsapsfound: 'No PSAPs found' }))
 });
 
-router.get('/search-psap'), (req, res) => {
-    Psap.find(req.body)
-        .then(psap => res.json(psap))
-        .catch(err => res.status(404).json( { nopsapfound: 'No such PSAP found' }))
+router.get('/search-psap/:id'), (req, res) => {
+    Psap.findOne(req.params.county, (error, data) => {
+        if (error) {
+            return error
+        } else {
+            res.json(data)
+        }
+    })
 }
 
 router.post('/', (req, res) => {
@@ -30,3 +24,11 @@ router.post('/', (req, res) => {
 })
 
 module.exports = router;
+
+/*
+Psap.findOne({
+        county: req.query
+    })
+        .then(psap => res.json(psap))
+        .catch(err => res.status(404).json( { nopsapfound: 'No such PSAP found' }))
+*/

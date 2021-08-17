@@ -5,8 +5,8 @@ import axios from 'axios';
 import PsapCard from './PsapCard';
 
 class SearchPsap extends React.Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
             county: '',
             searchResult: []
@@ -17,15 +17,14 @@ class SearchPsap extends React.Component {
         this.setState({
             [e.target.name]: e.target.value
         })
+        console.log(this.state)
     }
 
     onSubmit = e => {
         e.preventDefault();
-        const data = {
-            county: this.state.county
-        }
+        let searchData = this.state.county;
 
-        axios.get('http://localhost:8082/search-psap')
+        axios.get('http://localhost:8082/search-psap', { params: { searchData } })
             .then(res => {
                 this.setState({
                     searchResult: res.data
@@ -34,17 +33,11 @@ class SearchPsap extends React.Component {
                     console.log(`Error with SearchPsap`)
                 })
             })
+            console.log(this.state.searchResult);
     }
 
     render() {
-        const searchResult = this.state.searchResult;
-        let resultToRender;
-
-        if(!searchResult) {
-            searchResult = `Unable to match your search to a PSAP in the records`;
-        } else {
-            resultToRender = <PsapCard psap={searchResult} />
-        }
+    
 
         return (
             <div className="show-psap-list">
@@ -86,7 +79,7 @@ class SearchPsap extends React.Component {
                             </div>
                         </form>
                         <div className="psaps-list">
-                            {resultToRender}
+                            `Hello`
                         </div>
                     </div>
                 </div>

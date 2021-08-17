@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import '../App.css';
 import axios from 'axios';
 import PsapCard from './PsapCard';
+import e from 'cors';
 
 
 
@@ -10,7 +11,9 @@ class ShowPsapList extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            psaps: []
+            psaps: [],
+            search: '',
+            searchedPsaps: []
         }
     }
 
@@ -26,15 +29,39 @@ class ShowPsapList extends React.Component {
             })
     }
 
+    onChange = e => {
+      this.setState({
+        [e.target.name]: e.target.value
+      })
+    }
+
+    onSubmit = e => {
+      e.preventDefault();
+      this.setState({
+        searchedPsaps: this.state.search
+      })
+    }
+
     render() {
         const psaps = this.state.psaps;
+        //console.log(psaps);
+        const filteredPsaps = this.state.searchedPsaps;
+        //console.log(filteredPsaps);
+        //let psapsFiltered = psaps.filter(psap => psap.county != 'Oldham')
         let psapList;
     
-        if(!psaps) {
-          psapList = "There are no PSAP records!";
+        if(filteredPsaps.length === 0) {
+          if(!psaps) {
+            psapList = "There are no PSAP records!";
+          } else {
+            psapList = psaps.map((psap, k) =>
+              <PsapCard psap={psap} key={k} />
+            );
+          }
         } else {
-          psapList = psaps.map((psap, k) =>
-            <PsapCard psap={psap} key={k} />
+          let psapsFiltered = psaps.filter(psap => psap.county == filteredPsaps)
+          psapList = psapsFiltered.map((psap, k) =>
+            <PsapCard psap={psap} key={k} onRender={console.log(psap)} />
           );
         }
     
@@ -60,6 +87,22 @@ class ShowPsapList extends React.Component {
                 </div>
     
               </div>
+              <form noValidate onSubmit={this.onSubmit}>
+                            <div className="form-group">
+                                <input
+                                    type='text'
+                                    placeholder='Enter the county whose PSAP you wish to find here. . .'
+                                    name='search'
+                                    className='form-control'
+                                    value={this.state.search}
+                                    onChange={this.onChange}
+                                />
+                                <input
+                                    type="submit"
+                                    className="btn btn-outline-warning btn-block mt-4"
+                                />
+                            </div>
+                        </form>
                 <div className="psaps-container">
                     <div className="psaps-list">
                         {psapList}
