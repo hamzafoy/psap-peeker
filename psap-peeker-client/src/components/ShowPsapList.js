@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import '../App.css';
 import axios from 'axios';
 import PsapCard from './PsapCard';
-import e from 'cors';
 
 
 
@@ -15,6 +14,7 @@ class ShowPsapList extends React.Component {
             search: '',
             searchedPsaps: []
         }
+        this.refreshPsapList = this.refreshPsapList.bind(this);
     }
 
     componentDidMount() {
@@ -27,6 +27,12 @@ class ShowPsapList extends React.Component {
             .catch(err => {
                 console.log(`Error in ShowPsapList`)
             })
+    }
+
+    refreshPsapList() {
+      this.setState({
+        searchedPsaps: []
+      })
     }
 
     onChange = e => {
@@ -75,9 +81,9 @@ class ShowPsapList extends React.Component {
                 </div>
     
                 <div className="col-md-12">
-                  <Link to="/search-psap" className="btn btn-outline-warning float-left">
-                    &#x1F50E;&#xFE0E; Search for PSAP
-                  </Link>
+                  <button className="btn btn-outline-warning float-left" onClick={this.refreshPsapList}>
+                    &#8635; Refresh PSAP List
+                  </button>
                   <Link to="/create-psap" className="btn btn-outline-warning float-right">
                     + Add New PSAP
                   </Link>
