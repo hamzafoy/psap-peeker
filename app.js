@@ -5,8 +5,8 @@ let cors = require('cors');
 const app = express();
 const routes = require('./routes/psaps')
 let port = process.env.PORT;
-if (port == null || port == "") {
-    port == 8082;
+if (port === null || port === "") {
+    port = 8082;
 }
 
 
