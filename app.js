@@ -4,7 +4,10 @@ const connectToDatabase = require('./config/db');
 let cors = require('cors');
 const app = express();
 const routes = require('./routes/psaps')
-const port = process.env.PORT || 8082;
+let port = process.env.PORT;
+if (port == null || port == "") {
+    port == 8082;
+}
 
 
 connectToDatabase();
