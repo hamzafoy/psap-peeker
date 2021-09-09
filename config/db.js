@@ -1,11 +1,11 @@
 const mongoose = require('mongoose');
 const config = require('config');
-//const db = process.env.MONGODB_URI;
+const db = process.env.MONGODB_URI || config.get('mongoURI');
 
 const connectToDatabase = async () => {
     try {
       await mongoose.connect(
-        process.env.MONGODB_URI,
+        db,
         {
           useNewUrlParser: true,
           useUnifiedTopology: true
