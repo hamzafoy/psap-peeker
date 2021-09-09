@@ -22,7 +22,7 @@ class ShowPsapList extends React.Component {
     }
 
     componentDidMount() {
-        axios.get('/')
+        axios.get('/api/')
             .then(res => {
                 this.setState({
                     psaps: res.data
