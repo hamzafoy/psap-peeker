@@ -12,6 +12,7 @@ connectToDatabase();
 
 app.use(express.static(path.join(__dirname, "client/build")))
 app.use(cors({ origin: true, credentials: true }));
+app.enable('trust proxy');
 app.use(express.json({ extended: false }));
 app.use(routes);
 if (process.env.NODE_ENV === "production") {
