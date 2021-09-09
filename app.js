@@ -15,7 +15,10 @@ app.use(cors({ origin: true, credentials: true }));
 app.enable('trust proxy');
 app.use(express.json({ extended: false }));
 app.use(routes);
-if (process.env.NODE_ENV === "production") {
+app.get("*", (req, res) =>
+      res.sendFile(path.resolve("build", "index.html"))
+    );
+/* if (process.env.NODE_ENV === "production") {
     // Express will serve up production assets
     app.use(express.static("build"));
   
@@ -23,7 +26,7 @@ if (process.env.NODE_ENV === "production") {
     app.get("*", (req, res) =>
       res.sendFile(path.resolve("build", "index.html"))
     );
-  }
+  } */
 app.listen(port, () => console.log(`Server running on port ${port}`));
 
 /* "build": "CI=false && react-scripts build", */
