@@ -5,6 +5,10 @@ import axios from 'axios';
 
 
 
+const port = process.env.PORT || 'http://localhost:8082/';
+
+
+
 class CreatePsap extends React.Component {
     constructor() {
         super();
@@ -27,7 +31,7 @@ class CreatePsap extends React.Component {
             phone_number: this.state.phone_number
         }
 
-        axios.post('http://localhost:8082/', data)
+        axios.post(port, data)
         .then(res => {
             this.setState({
                 county: '',

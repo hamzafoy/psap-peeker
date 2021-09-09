@@ -6,6 +6,10 @@ import PsapCard from './PsapCard';
 
 
 
+const port = process.env.PORT || 'http://localhost:8082/';
+
+
+
 class ShowPsapList extends React.Component {
     constructor(props) {
         super(props);
@@ -18,7 +22,7 @@ class ShowPsapList extends React.Component {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:8082/')
+        axios.get(port)
             .then(res => {
                 this.setState({
                     psaps: res.data
