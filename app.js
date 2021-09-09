@@ -19,9 +19,9 @@ if (process.env.NODE_ENV === "production") {
     app.use(express.static("build"));
   
     // Express will serve up the front-end index.html file if it doesn't recognize the route
-    app.get("*", (req, res) =>
-      res.sendFile(path.resolve("build", "index.html"))
-    );
+    app.get(/^\/(?!api).*/, (req, res) => { // don't serve react app to api routes
+        res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+      });
   }
 app.listen(port, () => console.log(`Server running on port ${port}`));
 
