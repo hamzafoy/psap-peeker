@@ -6,7 +6,7 @@ import PsapCard from './PsapCard';
 
 
 
-const port = process.env.PORT || 'http://localhost:8082/';
+//const port = process.env.PORT || 'http://localhost:8082/';
 
 
 
@@ -22,7 +22,7 @@ class ShowPsapList extends React.Component {
     }
 
     componentDidMount() {
-        axios.get(port)
+        axios.get('https://shrouded-brushlands-00969.herokuapp.com/')
             .then(res => {
                 this.setState({
                     psaps: res.data
