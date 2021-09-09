@@ -22,7 +22,7 @@ class ShowPsapList extends React.Component {
     }
 
     componentDidMount() {
-        axios.get('https://shrouded-brushlands-00969.herokuapp.com/')
+        axios.get('http://localhost:8082/')
             .then(res => {
                 this.setState({
                     psaps: res.data
