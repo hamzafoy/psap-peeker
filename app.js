@@ -11,6 +11,7 @@ const port = process.env.PORT || 8082;
 connectToDatabase();
 app.use(cors({ origin: true, credentials: true }));
 app.use(express.json({ extended: false }));
+app.use('/', express.static(path.join(__dirname, '../client/build')));
 app.use(routes);
 
 
