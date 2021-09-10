@@ -9,34 +9,19 @@ const port = process.env.PORT || 8082;
 
 
 connectToDatabase();
-
-app.use(express.static(path.join(__dirname, "client/build")))
 app.use(cors({ origin: true, credentials: true }));
-app.enable('trust proxy');
 app.use(express.json({ extended: false }));
 app.use(routes);
-/* if (process.env.NODE_ENV === "production") {
-    // Express will serve up production assets
-    app.use(express.static("build"));
-  
-    // Express will serve up the front-end index.html file if it doesn't recognize the route
-    app.get("*", (req, res) =>
-      res.sendFile(path.resolve("build", "index.html"))
-    );
-  } */
-  if (process.env.NODE_ENV === "production") {
+
+
+if (process.env.NODE_ENV === "production") {
     app.use(express.static("client/build"));
     app.get("/*", function(req, res) {
       res.sendFile(path.join(__dirname, "./client/build/index.html"));
     });
   }
-  
-  else {
-    app.use(express.static(path.join(__dirname, '/client/public')));
-    app.get("/*", function(req, res) {
-      res.sendFile(path.join(__dirname, "./client/public/index.html"));
-    });
-  }
+
+
 app.listen(port, () => console.log(`Server running on port ${port}`));
 
 /* "build": "CI=false && react-scripts build", */
