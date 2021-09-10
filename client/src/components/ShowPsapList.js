@@ -88,7 +88,7 @@ class ShowPsapList extends React.Component {
                   <button className="btn btn-outline-warning float-left" onClick={this.refreshPsapList}>
                     &#8635; Refresh PSAP List
                   </button>
-                  <Link to="/create-psap" className="btn btn-outline-warning float-right">
+                  <Link to="/redirect/create-psap" className="btn btn-outline-warning float-right">
                     + Add New PSAP
                   </Link>
                   <br />

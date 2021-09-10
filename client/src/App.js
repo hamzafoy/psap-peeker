@@ -12,7 +12,7 @@ class App extends Component {
       <Router>
         <div>
           <Route exact path='/' component={ShowPsapList} />
-          <Route path='/create-psap' component={CreatePsap} />
+          <Route path='/redirect/create-psap' component={CreatePsap} />
         </div>
       </Router>
     );

@@ -16,11 +16,12 @@ app.use(routes);
 
 
 if (process.env.NODE_ENV === "production") {
-    
-    app.get('/*', (req, res) => {
-      res.sendFile(path.join(`${__dirname}/client/build/`));
-    });
-  }
+  
+  app.get('/redirect/*', (req, res) => {
+    res.sendFile(path.join(`${__dirname}/client/build/`));
+  });
+  
+}
 
 
 app.listen(port, () => console.log(`Server running on port ${port}`));
