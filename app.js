@@ -11,14 +11,14 @@ const port = process.env.PORT || 8082;
 connectToDatabase();
 app.use(cors({ origin: true, credentials: true }));
 app.use(express.json({ extended: false }));
-app.use(express.static("../client/build"));
+app.use('/static', express.static(path.join(`${__dirname}/client/build`)));
 app.use(routes);
 
 
 if (process.env.NODE_ENV === "production") {
     
-    app.get("*", function(req, res) {
-      res.sendFile(path.join(__dirname, "../client/build/index.html"));
+    app.get('/*', (req, res) => {
+      res.sendFile(path.join(`${__dirname}/client/build/`));
     });
   }
 
