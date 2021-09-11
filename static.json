@@ -1,0 +1,11 @@
+{
+    "root": "build/",
+    "routes": {
+      "/**": "index.html"
+    },
+    "proxies": {
+      "/api": {
+        "origin": "https://shrouded-brushlands-00969.herokuapp.com/api"
+      }
+    }
+  }
