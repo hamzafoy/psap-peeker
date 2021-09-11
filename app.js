@@ -13,7 +13,7 @@ app.use(cors({ origin: true, credentials: true }));
 app.use(express.json({ extended: false }));
 
 app.use(routes);
-app.use('/', express.static(path.join(`${__dirname}/client/build`)));
+app.use('/static', express.static(path.join(`${__dirname}/client/build/static`)));
 
 if (process.env.NODE_ENV === "production") {
   
