@@ -31,7 +31,7 @@ class CreatePsap extends React.Component {
             phone_number: this.state.phone_number
         }
 
-        axios.post('http://localhost:8082/', data)
+        axios.post('http://localhost:8082/api', data)
         .then(res => {
             this.setState({
                 county: '',

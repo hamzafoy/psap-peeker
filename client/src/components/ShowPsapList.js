@@ -22,7 +22,7 @@ class ShowPsapList extends React.Component {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:8082/')
+        axios.get('http://localhost:8082/api')
             .then(res => {
                 this.setState({
                     psaps: res.data

@@ -12,7 +12,7 @@ connectToDatabase();
 app.use(cors({ origin: true, credentials: true }));
 app.use(express.json({ extended: false }));
 
-app.use(routes);
+app.use('/api', routes);
 
 if (process.env.NODE_ENV === 'production') {
   // Exprees will serve up production assets
