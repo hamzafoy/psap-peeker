@@ -18,7 +18,7 @@ router.get('api/search-psap/:id'), (req, res) => {
     })
 }
 
-router.post('/api', (req, res) => {
+router.post('/', (req, res) => {
     Psap.create(req.body)
         .then(psap => res.json({ msg: `The PSAP has been entered successfully!` }))
 })
