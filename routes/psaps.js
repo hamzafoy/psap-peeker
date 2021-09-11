@@ -1,6 +1,18 @@
+/*--
+Requiring Express, enabling routing, and pulling the PSAP model for use with
+database transactions.
+--*/
+
 const express = require('express');
 const router = express.Router();
-const Psap = require('../models/PSAP')
+const Psap = require('../models/PSAP');
+
+
+
+/*--
+Handling GET request to load full list of PSAPS, GET request for
+finding a single PSAP by county name, and POST request to add PSAPS.
+--*/
 
 router.get('/', (req, res) => {
     Psap.find()
@@ -24,12 +36,3 @@ router.post('/', (req, res) => {
 })
 
 module.exports = router;
-
-/*
-Psap.findOne({
-        county: req.query
-    })
-        .then(psap => res.json(psap))
-        .catch(err => res.status(404).json( { nopsapfound: 'No such PSAP found' }))
-        T
-*/
