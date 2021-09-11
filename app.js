@@ -13,6 +13,7 @@ app.use(cors({ origin: true, credentials: true }));
 app.use(express.json({ extended: false }));
 
 app.use('/api', routes);
+app.use('/', express.static(path.join(__dirname, '/client/build')));
 
 if (process.env.NODE_ENV === 'production') {
   // Exprees will serve up production assets
