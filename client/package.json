@@ -44,5 +44,5 @@
   "devDependencies": {
     "nodemon": "^2.0.12"
   },
-  "proxy": "http://localhost:8082/api"
+  "proxy": "hhttps://shrouded-brushlands-00969.herokuapp.com/api"
 }
