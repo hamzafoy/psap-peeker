@@ -8,7 +8,7 @@ router.get('/', (req, res) => {
         .catch(err => res.status(404).json( { nopsapsfound: 'No PSAPs found' }))
 });
 
-router.get('/search-psap/:id'), (req, res) => {
+router.get('api/search-psap/:id'), (req, res) => {
     Psap.findOne(req.params.county, (error, data) => {
         if (error) {
             return error
@@ -18,7 +18,7 @@ router.get('/search-psap/:id'), (req, res) => {
     })
 }
 
-router.post('/', (req, res) => {
+router.post('/api', (req, res) => {
     Psap.create(req.body)
         .then(psap => res.json({ msg: `The PSAP has been entered successfully!` }))
 })
