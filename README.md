@@ -36,6 +36,7 @@ This *full-stack* application is intended to provide a swifter means to look up 
 * \* **PSAPs**: 'public safety answering points'.
 * \** **MetroSafe**: The 911 communication center for Jefferson County in Kentucky.
 * This application is currently deployed on [Heroku](https://www.heroku.com/) and can be found [here](https://shrouded-brushlands-00969.herokuapp.com/).
+* To create ease for MetroSafe staff to type in and access this, created a *Bitly* at bit.ly/psap-searchl.
 
 <hr>
 
